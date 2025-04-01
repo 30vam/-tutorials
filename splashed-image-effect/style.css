@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: black;
+}
+
+section {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: url(bg.jpg);
+  background-size: cover;
+  mask-image: url(splash.png);
+  mask-size: 100%;
+  mask-position: 0% 80%;
+}
