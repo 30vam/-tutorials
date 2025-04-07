@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
+
+:root {
+  --border-thickness: 2px;
+  --border-length: 8px;
+}
+
+body {
+  font-family: "Vazirmatn";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  background: black;
+}
+
+button {
+  position: relative;
+  padding: 8px 20px;
+  border: var(--border-thickness) solid white;
+  border-radius: 8px;
+  background-color: black;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: var(--border-length);
+  left: calc(-1 * var(--border-thickness));
+  width: calc(100% + 2 * var(--border-thickness));
+  height: calc(100% - 2 * var(--border-length));
+  background: black;
+  transition: all 0.3s ease-in-out 0.3s;
+  transform: scaleY(1);
+}
+
+button:hover::before {
+  transform: scaleY(0.25);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--border-thickness));
+  left: var(--border-length);
+  width: calc(100% - 2 * var(--border-length));
+  height: calc(100% + 2 * var(--border-thickness));
+  background: black;
+  transition: all 0.3s ease-in-out;
+  transform: scaleX(1);
+}
+
+button:hover::after {
+  transform: scaleX(0.35);
+}
+
+button span {
+  font: 400 20px "Vazirmatn";
+  color: white;
+  position: relative;
+  z-index: 10;
+}
