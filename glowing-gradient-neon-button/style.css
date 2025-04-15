@@ -1,18 +1,15 @@
-* {
-  font-family: "Vazirmatn";
-}
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100dvh;
   background-color: black;
+  overflow: hidden;
 }
 
 button {
   position: relative;
-  width: 160px;
+  width: 200px;
   height: 80px;
   border: none;
   background-color: black;
@@ -22,6 +19,7 @@ button {
 }
 
 button span {
+  font-family: "Montserrat";
   position: absolute;
   display: flex;
   justify-content: center;
@@ -30,8 +28,8 @@ button span {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: rgb(43, 43, 43);
-  color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(rgb(71, 71, 71), rgb(29, 29, 29));
+  color: rgba(255, 255, 255, 0.3);
   transition: 0.5s;
   z-index: 10;
 }
@@ -48,22 +46,22 @@ button::before {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    45deg,
+    90deg,
     purple,
     blue,
     green,
     yellow,
     red,
-    purple,
-    blue,
-    green,
+    red,
     yellow,
-    red
+    green,
+    blue,
+    purple
   );
   background-size: 400%;
   opacity: 0;
   transition: 0.5s;
-  animation: button-animation 30s linear infinite;
+  animation: button-animation 15s linear alternate infinite;
 }
 
 button::after {
@@ -74,23 +72,23 @@ button::after {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    45deg,
+    90deg,
     purple,
     blue,
     green,
     yellow,
     red,
-    purple,
-    blue,
-    green,
+    red,
     yellow,
-    red
+    green,
+    blue,
+    purple
   );
   background-size: 400%;
   opacity: 0;
   filter: blur(28px);
   transition: 0.5s;
-  animation: button-animation 30s linear infinite;
+  animation: button-animation 15s linear alternate infinite;
 }
 
 button:hover::before,
@@ -98,24 +96,12 @@ button:hover::after {
   opacity: 1;
 }
 
-button span::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 @keyframes button-animation {
   0% {
     background-position: 0 0;
   }
-  50% {
-    background-position: 300% 0;
-  }
+
   100% {
-    background-position: 0 0;
+    background-position: 300% 0;
   }
 }
